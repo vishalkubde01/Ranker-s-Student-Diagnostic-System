@@ -1,0 +1,81 @@
+    
+    body {
+        background: #f1f5f9;
+      }
+      .card-box {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+      }
+      .nav-btn.active {
+        background: linear-gradient(to right, #2563eb, #06b6d4);
+        color: white;
+      }
+      .progress {
+        height: 6px;
+      }
+      .rotate {
+        transform: rotate(90deg);
+      }
+
+      /* --- Syllabus specific styles --- */
+      .subject-header {
+        background: #f8fafc;
+        border-radius: 0.75rem;
+        cursor: pointer;
+      }
+      .pill {
+        background: #e2e8f0;
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 12px;
+      }
+      .pill-active {
+        background: #dcfce7;
+        color: #16a34a;
+      }
+      .chapter-row {
+        background: #f8fafc;
+        border-radius: 0.75rem;
+      }
+      .add-chapter {
+        border: 2px dashed #cbd5e1;
+        border-radius: 0.75rem;
+        background: transparent;
+        color: #334155;
+      }
+      /* ---- Dynamic syllabus UI ---- */
+      .syllabus-wrapper {
+        border: 1px solid #e5e7eb;
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+      }
+
+      .subject-card {
+        background: #f8fafc;
+        border-radius: 1rem;
+        padding: 1rem 1.25rem;
+        cursor: pointer;
+      }
+
+      .chapter-row,
+      .topic-row {
+        background: #f8fafc;
+        border-radius: 1rem;
+        padding: 1rem 1.25rem;
+      }
+
+      .topic-row {
+        margin-left: 2rem;
+      }
+
+      .add-box {
+        border: 2px dashed #cbd5e1;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 500;
+      }
+    

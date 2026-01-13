@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+     background-color: #f3f4f6;  
+   
+    color: #1f2937;
+}
+
+/* Navbar Brand Icon */
+.brand-icon {
+    width: 32px;
+    height: 32px;   
+    background-color: #0ea5e9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Hover Effects */
+.hover-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Circular Progress in Blue Card (Pure CSS) */
+.circular-progress {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Conic gradient creates the 75% filled look */
+    background: conic-gradient(#ffffff 75%, rgba(255,255,255,0.2) 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-circle {
+    width: 65px;
+    height: 65px;
+    background: #0284c7; /* Match card gradient start */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+}
+
+/* Icon Squares */
+.icon-square {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ls-1 {
+    letter-spacing: 0.5px;
+    font-size: 0.7rem;
+}
+
+/* Custom Progress Bars */
+.progress {
+    background-color: #e5e7eb;
+}
+
+.width-adjustment{
+    width:80vw;
+}
+
+/* Legend Dots */
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.bg-blue { background-color: #3b82f6; }
+.bg-teal { background-color: #14b8a6; }
+.bg-green { background-color: #10b981; }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .width-adjustment {
+        width: 100vw;
+    }
+    .chart-container {
+        height: 250px !important;
+    }
+    .circular-progress {
+        width: 60px;
+        height: 60px;
+    }
+    .inner-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}

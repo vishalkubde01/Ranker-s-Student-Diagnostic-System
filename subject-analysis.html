@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Progress Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assests/css/student-analysis.css" />
+    <link rel="stylesheet" href="assests/css/student-dashboard.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2 sticky-top"
+    >
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center">
+          <div class="brand-icon me-2">
+            <i class="bi bi-mortarboard-fill text-white"></i>
+          </div>
+          <div>
+            <h5 class="mb-0 fw-bold fs-6">Student Diagnostic System</h5>
+            <small class="text-muted d-block" style="font-size: 0.7rem"
+              >Student Portal</small
+            >
+          </div>
+        </div>
+        <div class="ms-auto d-flex align-items-center">
+          <div class="text-end me-3 d-none d-md-block">
+            <div class="fw-bold text-dark fs-6">John Smith</div>
+            <div class="text-muted" style="font-size: 0.75rem">
+              Grade 10 - Section A
+            </div>
+          </div>
+          <div class="avatar-circle me-3">JS</div>
+          <button class="btn btn-light btn-sm rounded-circle">
+            <i class="bi bi-box-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="tabs d-flex justify-content-between align-items-center flex-wrap sticky-top"
+    >
+      <!-- Left Tabs -->
+      <div class="tabs-left d-flex">
+        <a href="student-dashboard.html">
+          <i class="fa fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="subject-analysis.html" class="active">
+          <i class="fa fa-book"></i>
+          <span>Subject Analytics</span>
+        </a>
+        <a href="gap-analysis.html">
+          <i class="fa fa-triangle-exclamation"></i>
+          <span>Gap Analysis</span>
+        </a>
+        <a href="report.html">
+          <i class="fa fa-file"></i>
+          <span>Reports</span>
+        </a>
+      </div>
+
+      <!-- Right Button -->
+      <!-- <div class="tabs-right">
+        <a href="test.html" class="btn take-test-btn">
+          <i class="fa fa-pen-to-square"></i>
+          <span>Take Self Diagnostic Test</span>
+        </a>
+      </div> -->
+    </div>
+
+    <div class="container py-4">
+      <!-- ===== TOP SUMMARY ===== -->
+      <div class="row g-4 mb-4">
+        <!-- Known Topics -->
+        <div class="col-md-4">
+          <div class="summary-card known">
+            <div class="icon-circle">
+              <i class="bi bi-check"></i>
+            </div>
+            <div class="content">
+              <h2>6</h2>
+              <p class="title">Known Topics</p>
+              <span class="desc">Topics you've mastered</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partial Understanding -->
+        <div class="col-md-4">
+          <div class="summary-card partial">
+            <div class="icon-circle">
+              <i class="bi bi-circle"></i>
+            </div>
+            <div class="content">
+              <h2>2</h2>
+              <p class="title">Partial Understanding</p>
+              <span class="desc">Needs more practice</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unknown Topics -->
+        <div class="col-md-4">
+          <div class="summary-card unknown">
+            <div class="icon-circle">
+              <i class="bi bi-x"></i>
+            </div>
+            <div class="content">
+              <h2>3</h2>
+              <p class="title">Unknown Topics</p>
+              <span class="desc">Requires attention</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SUBJECT SELECT ===== -->
+      <div class="chapter-card mb-4">
+        <h6 class="mb-3">Select Subject</h6>
+        <div class="d-md-none mb-2">
+          <select class="form-select" onchange="loadSubject(this.value)">
+            <option value="">Select Subject</option>
+            <option value="maths">Mathematics</option>
+            <option value="physics">Physics</option>
+            <option value="chemistry">Chemistry</option>
+          </select>
+        </div>
+        <div class="d-none d-md-flex gap-2 flex-wrap">
+          <button
+            class="subject-btn active"
+            onclick="loadSubject('maths',this)"
+          >
+            Mathematics
+          </button>
+          <button class="subject-btn" onclick="loadSubject('physics',this)">
+            Physics
+          </button>
+          <button class="subject-btn" onclick="loadSubject('chemistry',this)">
+            Chemistry
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== CHAPTER PROGRESS ===== -->
+      <div id="content" class="fade-in">
+        <!-- Chapter 1 -->
+        <div class="chapter-card">
+          <div class="chapter-header" onclick="toggleChapter(this)">
+            <div class="chapter-title fw-bold">Chapter 1: Real Numbers</div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fw-bold">100%</span>
+              <button
+                class="arrow-btn"
+                onclick="event.stopPropagation(); toggleChapter(this.closest('.chapter-header'))"
+              >
+                <i class="bi bi-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="progress my-2">
+            <div
+              class="progress-bar"
+              style="background: var(--color-green-500)"
+              data-progress="100"
+            ></div>
+          </div>
+          <div class="chapter-divider"></div>
+          <div class="topics-section">
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>Euclid's Division Algorithm</span>
+              </div>
+              <span class="badge badge-mastered">Mastered</span>
+            </div>
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>Fundamental Theorem of Arithmetic</span>
+              </div>
+              <span class="badge badge-mastered">Mastered</span>
+            </div>
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>HCF and LCM</span>
+              </div>
+              <span class="badge badge-mastered">Mastered</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="chapter-card">
+          <div class="chapter-header" onclick="toggleChapter(this)">
+            <div class="chapter-title fw-bold">Chapter 2: Polynomials</div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fw-bold">80%</span>
+              <button
+                class="arrow-btn"
+                onclick="event.stopPropagation(); toggleChapter(this.closest('.chapter-header'))"
+              >
+                <i class="bi bi-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="progress my-2">
+            <div
+              class="progress-bar"
+              style="background: var(--color-green-500)"
+              data-progress="80"
+            ></div>
+          </div>
+          <div class="chapter-divider"></div>
+          <div class="topics-section">
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>Introduction to Polynomials</span>
+              </div>
+              <span class="badge badge-mastered">Mastered</span>
+            </div>
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>Degree of Polynomial</span>
+              </div>
+              <span class="badge badge-mastered">Mastered</span>
+            </div>
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>Zeroes of Polynomial</span>
+              </div>
+              <span
+                class="badge"
+                style="
+                  background: #fff3cd;
+                  color: #856404;
+                  border-radius: 20px;
+                  padding: 4px 12px;
+                  font-weight: 500;
+                "
+                >Partial</span
+              >
+            </div>
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>Division of Polynomials</span>
+              </div>
+              <span
+                class="badge"
+                style="
+                  background: #f8d7da;
+                  color: #721c24;
+                  border-radius: 20px;
+                  padding: 4px 12px;
+                  font-weight: 500;
+                "
+                >Unknown</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="chapter-card">
+          <div class="chapter-header" onclick="toggleChapter(this)">
+            <div class="chapter-title fw-bold">Chapter 3: Linear Equations</div>
+            <div class="d-flex align-items-center gap-3">
+              <span class="fw-bold">60%</span>
+              <button
+                class="arrow-btn"
+                onclick="event.stopPropagation(); toggleChapter(this.closest('.chapter-header'))"
+              >
+                <i class="bi bi-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="progress my-2">
+            <div class="progress-bar bg-warning" data-progress="60"></div>
+          </div>
+          <div class="chapter-divider"></div>
+          <div class="topics-section">
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>One Variable Equations</span>
+              </div>
+              <span
+                class="badge"
+                style="
+                  background: #fff3cd;
+                  color: #856404;
+                  border-radius: 20px;
+                  padding: 4px 12px;
+                  font-weight: 500;
+                "
+                >Partial</span
+              >
+            </div>
+            <div class="topic-row">
+              <div class="topic-content">
+                <i class="bi bi-check-circle-fill topic-icon"></i>
+                <span>Two Variable Equations</span>
+              </div>
+              <span
+                class="badge"
+                style="
+                  background: #f8d7da;
+                  color: #721c24;
+                  border-radius: 20px;
+                  padding: 4px 12px;
+                  font-weight: 500;
+                "
+                >Unknown</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assests/js/student-analysis.js"></script>
+  </body>
+</html>

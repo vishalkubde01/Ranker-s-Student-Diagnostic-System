@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consolidated Performance Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+    <link rel="stylesheet" href="assests/css/report.css">
+    <link rel="stylesheet" href="assests/css/student-dashboard.css">
+    <style>
+body{ background:#eef1f5; }
+.card{ border-radius:16px; }
+.brand{ color:#0b5ed7; font-weight:700; }
+</style>
+</head>
+<!-- <body class="bg-light"> -->
+
+  <!-- ===== Header ===== -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2 sticky-top">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center">
+                <div class="brand-icon me-2">
+                    <i class="bi bi-mortarboard-fill text-white"></i>
+                </div>
+                <div>
+                    <h5 class="mb-0 fw-bold fs-6">Student Diagnostic System</h5>
+                    <small class="text-muted d-block" style="font-size: 0.7rem;">Student Portal</small>
+                </div>
+            </div>
+            <div class="ms-auto d-flex align-items-center">
+                <div class="text-end me-3 d-none d-md-block">
+                    <div class="fw-bold text-dark fs-6">John Smith</div>
+                    <div class="text-muted" style="font-size: 0.75rem;">Grade 10 - Section A</div>
+                </div>
+                <div class="avatar-circle me-3">JS</div>
+                <button class="btn btn-light btn-sm rounded-circle"><i class="bi bi-box-arrow-right"></i></button>
+            </div>
+        </div>
+    </nav>
+ 
+<!-- ===== Tabs ===== -->
+<div class="tabs d-flex justify-content-between align-items-center flex-wrap sticky-top">
+
+  <!-- Left Tabs -->
+  <div class="tabs-left d-flex">
+    <a href="student-dashboard.html" >
+      <i class="fa fa-chart-pie"></i>
+      <span>Dashboard</span>
+    </a>
+    <a href="subject-analysis.html">
+      <i class="fa fa-book"></i>
+       <span>Subject Analytics</span>
+    </a>
+    <a href="gap-analysis.html">
+      <i class="fa fa-triangle-exclamation"></i>
+      <span>Gap Analysis</span>
+    </a>
+    <a href="report.html" class="active">
+      <i class="fa fa-file"></i>
+      <span>Reports</span>
+    </a>  
+  </div>
+
+  <!-- Right Button -->
+
+</div>
+
+    <div class="container-fluid px-4 py-4">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded-4 shadow-sm border-0">
+            <div>
+                <h4 class="fw-bold mb-1 fs-5">Consolidated Performance Report</h4>
+                <p class="text-muted small mb-0">Academic Year 2025-26 • Generated on Jan 9, 2026</p>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-dark btn-sm rounded-pill px-3 hover-lift" onclick="generatePDF()"><i class="bi bi-printer me-2" ></i>Print</button>
+                <button class="btn btn-primary btn-sm rounded-pill px-3 hover-lift"><i class="bi bi-download me-2"></i>Export PDF</button>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white h-100 border-0 shadow-sm hover-card" style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center py-4">
+                        <div class="circular-progress mb-3">
+                            <div class="inner-circle">75%</div>
+                        </div>
+                        <h6 class="mb-0 fw-bold">Overall Average</h6>
+                        <small class="opacity-75" style="font-size: 0.8rem;">Across all subjects</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body d-flex align-items-center p-4">
+                        <div class="icon-square bg-success-subtle text-success rounded-3 me-3">
+                            <i class="bi bi-award-fill fs-4"></i>
+                        </div>
+                        <div>
+                            <h3 class="mb-0 fw-bold">2</h3>
+                            <div class="fw-bold small text-muted text-uppercase ls-1">Top Performers</div>
+                            <small class="text-success fw-semibold">Subjects above 85%</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body d-flex align-items-center p-4">
+                        <div class="icon-square bg-warning-subtle text-warning rounded-3 me-3">
+                            <i class="bi bi-graph-up-arrow fs-4"></i>
+                        </div>
+                        <div>
+                            <h3 class="mb-0 fw-bold">3</h3>
+                            <div class="fw-bold small text-muted text-uppercase ls-1">Good Progress</div>
+                            <small class="text-warning fw-semibold">Subjects 65-85%</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card h-100 border-0 shadow-sm hover-card">
+                    <div class="card-body d-flex align-items-center p-4">
+                        <div class="icon-square bg-danger-subtle text-danger rounded-3 me-3">
+                            <i class="bi bi-exclamation-triangle-fill fs-4"></i>
+                        </div>
+                        <div>
+                            <h3 class="mb-0 fw-bold">1</h3>
+                            <div class="fw-bold small text-muted text-uppercase ls-1">Needs Focus</div>
+                            <small class="text-danger fw-semibold">Subjects below 65%</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4 rounded-4">
+            <div class="card-body p-4">
+                <h6 class="fw-bold mb-4">Subject-wise Performance Comparison</h6>
+                <div class="chart-container" style="height: 320px;">
+                    <canvas id="mainBarChart"></canvas>
+                </div>
+                <div class="d-flex justify-content-center gap-4 mt-3 small">
+                    <div class="d-flex align-items-center"><span class="legend-dot bg-blue me-2"></span> Current Progress</div>
+                    <div class="d-flex align-items-center"><span class="legend-dot bg-teal me-2"></span> Latest Score</div>
+                    <div class="d-flex align-items-center"><span class="legend-dot bg-green me-2"></span> Target</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-lg-5">
+                <div class="card h-100 border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-4">Skills Profile</h6>
+                        <div class="chart-container" style="height: 300px; width:100%;">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card h-100 border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-4">Skill Gap Summary</h6>
+                        
+                        <div class="gap-item mb-4">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold text-dark">Mathematical Problem Solving</span>
+                                <span class="badge bg-warning-subtle text-warning border border-warning rounded-pill px-3">Medium</span>
+                            </div>
+                            <div class="d-flex justify-content-between small text-muted mb-2">
+                                <span>Current: 85% • Target: 95%</span>
+                                <span class="text-danger fw-bold">Gap: 10%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary rounded-pill" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="gap-item mb-4">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold text-dark">Scientific Reasoning</span>
+                                <span class="badge bg-danger-subtle text-danger border border-danger rounded-pill px-3">High</span>
+                            </div>
+                            <div class="d-flex justify-content-between small text-muted mb-2">
+                                <span>Current: 70% • Target: 90%</span>
+                                <span class="text-danger fw-bold">Gap: 20%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary rounded-pill" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                        <div class="gap-item mb-4">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold text-dark">Language Proficiency</span>
+                                <span class="badge bg-success-subtle text-success border border-success rounded-pill px-3">Low</span>
+                            </div>
+                            <div class="d-flex justify-content-between small text-muted mb-2">
+                                <span>Current: 90% • Target: 95%</span>
+                                <span class="text-danger fw-bold">Gap: 5%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary rounded-pill" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                         <div class="gap-item mb-0">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold text-dark">Analytical Skills</span>
+                                <span class="badge bg-warning-subtle text-warning border border-warning rounded-pill px-3">Medium</span>
+                            </div>
+                            <div class="d-flex justify-content-between small text-muted mb-2">
+                                <span>Current: 75% • Target: 88%</span>
+                                <span class="text-danger fw-bold">Gap: 13%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary rounded-pill" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strong and Weak Subjects & Points -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-4 text-success">✅ Strong Subjects & Points</h6>
+                        <div class="mb-3">
+                            <h6 class="fw-bold small mb-2">Mathematics</h6>
+                            <p class="small text-dark">Algebraic equations, Geometry proofs, Calculus basics</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold small mb-2">English</h6>
+                            <p class="small text-dark">Grammar, Literature analysis, Essay writing</p>
+                        </div>
+                        <div class="mb-0">
+                            <h6 class="fw-bold small mb-2">Physics</h6>
+                            <p class="small text-dark">Mechanics, Optics, Electricity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card h-100 border-0 shadow-sm rounded-4">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-4 text-danger">❌ Weak Subjects & Points</h6>
+                        <div class="mb-3">
+                            <h6 class="fw-bold small mb-2">Biology</h6>
+                            <p class="small text-dark">Photosynthesis, Heredity, Cell division</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="fw-bold small mb-2">Chemistry</h6>
+                            <p class="small text-dark">Organic chemistry, Chemical reactions, Acids and bases</p>
+                        </div>
+                        <div class="mb-0">
+                            <h6 class="fw-bold small mb-2">History</h6>
+                            <p class="small text-dark">World wars, Ancient civilizations, Modern history</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- ================= BIOLOGY (MERGED) ================= -->
+<div class="accordion-item bg-transparent border-0 text-white">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed bg-transparent text-white fw-bold"
+                type="button" data-bs-toggle="collapse" data-bs-target="#bioFull">
+            Biology
+        </button>
+    </h2>
+
+    <div id="bioFull" class="accordion-collapse collapse">
+        <div class="accordion-body small">
+
+            <!-- ========= WEAK SECTION ========= -->
+            <div class="mb-3">
+                <h6 class="text-danger fw-bold">❌ Weak Topics</h6>
+
+                <div class="accordion" id="bioWeakAccordion">
+
+                    <!-- Photosynthesis -->
+                    <div class="accordion-item bg-transparent border-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent text-white small"
+                                    data-bs-toggle="collapse" data-bs-target="#bioWeak1">
+                                Photosynthesis
+                            </button>
+                        </h2>
+                        <div id="bioWeak1" class="accordion-collapse collapse">
+                            <div class="accordion-body small">
+                                <ul>
+                                    <li>Light Reaction</li>
+                                    <li>Dark Reaction</li>
+                                    <li>Chlorophyll Process</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heredity -->
+                    <div class="accordion-item bg-transparent border-0">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent text-white small"
+                                    data-bs-toggle="collapse" data-bs-target="#bioWeak2">
+                                Heredity
+                            </button>
+                        </h2>
+                        <div id="bioWeak2" class="accordion-collapse collapse">
+                            <div class="accordion-body small">
+                                <ul>
+                                    <li>Mendel Laws</li>
+                                    <li>Genetics Basics</li>
+                                    <li>DNA & Genes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ========= STRONG SECTION ========= -->
+            <div>
+                <h6 class="text-success fw-bold">✅ Strong Topics</h6>
+
+                <ul>
+                    <li>Cell Structure</li>
+                    <li>Human Digestive System</li>
+                    <li>Plant Tissues</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+
+    <script src="assests/js/report.js"></script>
+    <!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- jsPDF AutoTable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+<!-- Your Report JS -->
+<script src="assests/js/report.js"></script>
+
+</body>
+</html>

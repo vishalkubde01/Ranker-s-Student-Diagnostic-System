@@ -1,0 +1,331 @@
+body {
+            background: #f8fbff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont;
+        }
+ 
+        /* ================= COMPACT TOP CARDS (Horizontal Layout) ================= */
+        .stat-card {
+            border-radius: 20px;
+            padding: 20px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            /* Space between icon and text */
+            height: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+ 
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            flex-shrink: 0;
+            /* Prevents icon from squishing */
+        }
+ 
+        .stat-content h6 {
+            margin: 0;
+            font-size: 14px;
+            color: #5f6c7b;
+            font-weight: 600;
+        }
+ 
+        .stat-number {
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.2;
+        }
+ 
+        .stat-desc {
+            font-size: 12px;
+            margin: 0;
+            font-weight: 500;
+        }
+ 
+        /* Colors */
+        .weak-bg {
+            background: #fff1f1;
+            border: 1px solid #ffe1e1;
+        }
+ 
+        .unknown-bg {
+            background: #fff6e5;
+            border: 1px solid #ffecce;
+        }
+ 
+        .coverage-bg {
+            background: #eef7ff;
+            border: 1px solid #ddecff;
+        }
+ 
+        .weak-icon {
+            background: #ff2d2d;
+        }
+ 
+        .unknown-icon {
+            background: #ff7a00;
+        }
+ 
+        .coverage-icon {
+            background: #2f7bff;
+        }
+ 
+        .weak-text {
+            color: #ff2d2d;
+        }
+ 
+        .unknown-text {
+            color: #ff7a00;
+        }
+ 
+        .coverage-text {
+            color: #2f7bff;
+        }
+ 
+        /* ================= TABLE ================= */
+        .matrix-card {
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+ 
+        .matrix-header {
+            padding: 30px 36px;
+            border-bottom: 1px solid #eef2f6;
+        }
+ 
+        .matrix-header h4 {
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+ 
+        .matrix-header p {
+            margin: 0;
+            color: #5f6c7b;
+        }
+ 
+        .table thead th {
+            padding: 22px 30px;
+            font-size: 13px;
+            text-transform: uppercase;
+            background: #fbfdff;
+        }
+ 
+        .table tbody td {
+            padding: 22px 30px;
+            vertical-align: middle;
+        }
+ 
+        .table tbody tr {
+            height: 90px;
+        }
+ 
+        .row-excellent {
+            background: #f6fff9;
+        }
+ 
+        .row-good {
+            background: #fff9f1;
+        }
+ 
+        .row-work {
+            background: #fff4f4;
+        }
+ 
+        .pill-green,
+        .pill-red {
+            padding: 10px 18px;
+            border-radius: 22px;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 44px;
+            text-align: center;
+        }
+ 
+        .pill-green {
+            background: #d9ffe7;
+            color: #00a84f;
+        }
+ 
+        .pill-red {
+            background: #ffe1e1;
+            color: #e10000;
+        }
+ 
+        .progress {
+            height: 10px;
+            border-radius: 12px;
+            background: #e8edf3;
+        }
+ 
+        .progress-bar {
+            border-radius: 12px;
+        }
+ 
+        .status-excellent,
+        .status-good,
+        .status-work {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 140px;
+            height: 44px;
+            border-radius: 22px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+ 
+        .status-excellent {
+            background: #d9ffe7;
+            color: #00a84f;
+        }
+ 
+        .status-good {
+            background: #ffe8c7;
+            color: #ff7a00;
+        }
+ 
+        .status-work {
+            background: #ffe1e1;
+            color: #e10000;
+        }
+  body {
+        background: #f8fbff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      }
+ 
+      /* ===== PRIORITY SECTION UPDATED ===== */
+  body {
+        background: #f8fbff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      }
+ 
+      .priority-wrapper {
+       background: #cb6f52;
+        border-radius: 25px;
+        padding: 35px;
+        margin-top: 40px;
+      }
+ 
+      .priority-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #000;
+      }
+ 
+      .priority-sub {
+        color: #1f2d3d;
+      }
+ 
+      .focus-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 25px;
+        height: 100%;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      }
+ 
+      .focus-card h5 {
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 4px;
+      }
+ 
+      .chapter-line {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+      }
+ 
+      .sub-topics {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+ 
+      /* ===== UPDATED BADGE (SKY BLUE + SHORT HEIGHT) ===== */
+      .focus-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background:#e03b09;    /* sky blue */
+        color: #000;
+        padding: 3px 10px;        /* height reduced */
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 12px;
+        white-space: nowrap;
+         align-self: flex-start;  
+      }
+ 
+      .show-more-btn {
+       background:#e03b09;
+        color: #fff;
+        border: none;
+        border-radius: 18px;
+        padding: 6px 14px;
+        font-weight: 700;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+ 
+ 
+        /* ===== CENTER ALIGN TABLE BODY DATA UNDER EACH COLUMN ===== */
+.table thead th{
+    text-align: center;
+}
+ 
+.table tbody td{
+    text-align: center;
+    vertical-align: middle;
+}
+ 
+/* Coverage column (progress + %) center */
+.table tbody td .d-flex{
+    justify-content: center;
+}
+ 
+/* Pills & status badges perfectly centered */
+.pill-green,
+.pill-red,
+.status-excellent,
+.status-good,
+.status-work{
+    margin: 0 auto;
+}
+ 
+ 
+/* Navbar Brand Icon */
+.brand-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #0ea5e9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+ 

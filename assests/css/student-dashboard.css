@@ -1,0 +1,367 @@
+/* body {
+  font-family: Arial, sans-serif;
+}
+.card {
+  border-radius: 12px;
+} */
+
+
+
+
+body{
+  background:#f4f9fc;
+  font-family:"Segoe UI",sans-serif;
+  color:#000;
+} 
+
+
+/* Navbar Brand Icon */
+.brand-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #0ea5e9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+ 
+ 
+
+
+
+/* ===== Top Header ===== */
+.top-header{
+  background:#fff;
+  padding:14px 24px;
+  border-bottom:2px solid #5BB2E2;
+}
+.brand{
+  font-weight:600;
+  font-size:18px;
+  color:#000;
+}
+.subtext{
+  font-size:12px;
+  color:#444;
+}
+
+
+
+/* ===== Tabs ===== */
+.tabs {
+  background: #ffffff;
+  padding: 0 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabs-left a {
+  padding: 14px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tabs-left a.active {
+  color: #5BB2E2;
+  border-bottom: 3px solid #5BB2E2;
+}
+/* Take Self Diagnostic Test Button */
+.take-test-btn {
+  background-color: #5BB2E2 !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 10px 16px;
+  font-size: 13px;
+  line-height: 1.2;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* Icon color */
+.take-test-btn i {
+  color: #ffffff;
+}
+
+/* Hover effect */
+.take-test-btn:hover {
+  background-color: #3aa4db;
+  color: #ffffff;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+
+  .tabs {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  /* Horizontal scroll tabs */
+  .tabs-left {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tabs-left::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabs-left a {
+    font-size: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .tabs-left a.active {
+    background: #e6f4fb;
+    border-bottom: none;
+  }
+
+  /* Button full width */
+  
+  .tabs-right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .take-test-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+  }
+}
+
+
+/* ===== Main Card ===== */
+.main-card{
+  background:#fff;
+  border-radius:16px;
+  padding:40px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+  border-top:5px solid #5BB2E2;
+}
+
+/* ===== Progress Circle ===== */
+.progress-circle{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  font-weight:700;
+  margin:auto;
+  color:#000;
+  background:conic-gradient(#5BB2E2 0deg, #e5e7eb 0deg);
+}
+
+/* ===== Stat Cards ===== */
+.stat{
+  background:#fff;
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  border-left:6px solid #5BB2E2;
+  transition:0.3s;
+}
+.stat:hover{
+  transform:translateY(-5px);
+}
+
+.stat h3{
+  margin:0;
+  font-weight:700;
+  color:#000;
+}
+.stat small{
+  color:#555;
+}
+
+
+
+/* body{
+  background:#f3f8fd;
+  font-family:"Segoe UI",sans-serif;
+  color:#000;
+} */
+
+/* Page title */
+.page-title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+/* Card */
+.progress-card{
+  background:#fff;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Subject title */
+.subject-name{
+  font-size:16px;
+  font-weight:600;
+}
+
+/* Badge */
+.badge-excellent{
+  background:#dcfce7;
+  color:#15803d;
+  border-radius:20px;
+  padding:4px 12px;
+  font-size:12px;
+}
+.badge-good{
+  background:#ffedd5;
+  color:#c2410c;
+  border-radius:20px;
+  padding:4px 12px;
+  font-size:12px;
+}
+.badge-poor{
+  background:#fee2e2;
+  color:#b91c1c;
+  border-radius:20px;
+  padding:4px 12px;
+  font-size:12px;
+}
+
+/* Progress */
+.progress{
+  height:8px;
+  border-radius:10px;
+}
+.progress-math{ background:#e5f0ff; }
+.progress-phy{ background:#f5e6ff; }
+.progress-che{ background:#e8f9f0; }
+.progress-bio{ background:#fff1e6; }
+
+/* Dots */
+.dot{
+  height:8px;
+  width:8px;
+  border-radius:50%;
+  display:inline-block;
+}
+.green-dot{ background:#22c55e; }
+.gray-dot{ background:#cbd5e1; }
+
+.small-text{
+  font-size:13px;
+  color:#475569;
+}
+
+/* Subject Card Hover & Look */
+.subject-card{
+  transition:all 0.3s ease;
+  position:relative;
+}
+
+.subject-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* Progress bar */
+.subject-progress-bar{
+  width:0%;
+  height:100%;
+  border-radius:10px;
+  transition:width 0.3s linear, background 0.3s linear;
+}
+
+/* Progress colors */
+.progress-excellent{
+  background:linear-gradient(to right,#38bdf8,#0ea5e9);
+}
+.progress-good{
+  background:linear-gradient(to right,#22c55e,#16a34a);
+}
+.progress-average{
+  background:linear-gradient(to right,#fb923c,#f97316);
+}
+.progress-poor{
+  background:linear-gradient(to right,#ef4444,#dc2626);
+}
+
+
+
+
+/* ===== This Week's Focus ===== */
+.focus-section {
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  border-radius: 16px;
+  padding: 22px 26px;
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.focus-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.focus-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.focus-text {
+  font-size: 14px;
+  opacity: 0.95;
+  margin-top: 6px;
+}
+
+.focus-tags {
+  margin-top: 14px;
+}
+
+.focus-tag {
+  background: rgba(255,255,255,0.25);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  display: inline-block;
+  margin-right: 8px;
+  margin-top: 6px;
+}
+
+
+
+

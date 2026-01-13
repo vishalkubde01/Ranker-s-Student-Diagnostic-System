@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Diagnostic System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="assests/css/student-dashboard.css" />
+
+    <link rel="stylesheet" href="assests/css/report.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ===== Header ===== -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2 sticky-top"
+    >
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center">
+          <div class="brand-icon me-2">
+            <i class="bi bi-mortarboard-fill text-white"></i>
+          </div>
+          <div>
+            <h5 class="mb-0 fw-bold fs-6">Student Diagnostic System</h5>
+            <small class="text-muted d-block" style="font-size: 0.7rem"
+              >Student Portal</small
+            >
+          </div>
+        </div>
+        <div class="ms-auto d-flex align-items-center">
+          <div class="text-end me-3 d-none d-md-block">
+            <div class="fw-bold text-dark fs-6">John Smith</div>
+            <div class="text-muted" style="font-size: 0.75rem">
+              Grade 10 - Section A
+            </div>
+          </div>
+          <div class="avatar-circle me-3">JS</div>
+          <button class="btn btn-light btn-sm rounded-circle">
+            <i class="bi bi-box-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== Tabs ===== -->
+    <div
+      class="tabs d-flex justify-content-between align-items-center flex-wrap sticky-top"
+    >
+      <!-- Left Tabs -->
+      <div class="tabs-left d-flex">
+        <a href="student-dashboard.html" class="active">
+          <i class="fa fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="subject-analysis.html">
+          <i class="fa fa-book"></i>
+          <span>Subject Analytics</span>
+        </a>
+        <a href="gap-analysis.html">
+          <i class="fa fa-triangle-exclamation"></i>
+          <span>Gap Analysis</span>
+        </a>
+        <a href="report.html">
+          <i class="fa fa-file"></i>
+          <span>Reports</span>
+        </a>
+      </div>
+
+      <!-- Right Button -->
+      <div class="tabs-right">
+        <a href="test.html" class="btn take-test-btn">
+          <i class="fa fa-pen-to-square"></i>
+          <span>Take Self Diagnostic Test</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="container my-4">
+      <div class="row g-4 align-items-stretch">
+        <!-- ===== LEFT : Overall Progress ===== -->
+        <div class="col-lg-4 col-md-12">
+          <div
+            class="h-100 text-center"
+            style="
+              border-radius: 18px;
+              padding: 30px;
+              background: #ffffff;
+              box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <div
+              id="circle"
+              class="progress-circle"
+              style="
+                width: 120px;
+                height: 120px;
+                margin: auto;
+                font-size: 28px;
+                font-weight: 600;
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: conic-gradient(#5bb2e2 0deg, #e5e7eb 0deg);
+              "
+            >
+              0%
+            </div>
+
+            <div class="mt-3 fw-semibold" style="font-size: 16px">
+              Overall Progress
+            </div>
+            <small class="text-muted">Academic Year 2025–26</small>
+          </div>
+        </div>
+
+        <!-- ===== RIGHT : Strength / Focus / Average ===== -->
+        <div class="col-lg-8 col-md-12">
+          <div class="row g-4 h-100">
+            <!-- Strength -->
+            <div class="col-md-4">
+              <div
+                class="h-100"
+                style="background: #ecfdf5; border-radius: 18px; padding: 24px"
+              >
+                <div class="d-flex align-items-center gap-3">
+                  <div
+                    style="
+                      background: #22c55e;
+                      color: #fff;
+                      width: 44px;
+                      height: 44px;
+                      border-radius: 12px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fa fa-circle-check"></i>
+                  </div>
+                  <div>
+                    <h4 id="strong" style="margin: 0">12</h4>
+                    <small>Strength Areas</small>
+                  </div>
+                </div>
+
+                <span
+                  style="
+                    display: inline-block;
+                    margin-top: 14px;
+                    background: #dcfce7;
+                    color: #15803d;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    font-size: 12px;
+                  "
+                >
+                  Topics with 80%+ mastery
+                </span>
+              </div>
+            </div>
+
+            <!-- Focus -->
+            <div class="col-md-4">
+              <div
+                class="h-100"
+                style="background: #fff7ed; border-radius: 18px; padding: 24px"
+              >
+                <div class="d-flex align-items-center gap-3">
+                  <div
+                    style="
+                      background: #f97316;
+                      color: #fff;
+                      width: 44px;
+                      height: 44px;
+                      border-radius: 12px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fa fa-triangle-exclamation"></i>
+                  </div>
+                  <div>
+                    <h4 id="focus" style="margin: 0">8</h4>
+                    <small>Focus Areas</small>
+                  </div>
+                </div>
+
+                <span
+                  style="
+                    display: inline-block;
+                    margin-top: 14px;
+                    background: #ffedd5;
+                    color: #c2410c;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    font-size: 12px;
+                  "
+                >
+                  Topics needing attention
+                </span>
+              </div>
+            </div>
+
+            <!-- Average -->
+            <div class="col-md-4">
+              <div
+                class="h-100"
+                style="background: #eff6ff; border-radius: 18px; padding: 24px"
+              >
+                <div class="d-flex align-items-center gap-3">
+                  <div
+                    style="
+                      background: #3b82f6;
+                      color: #fff;
+                      width: 44px;
+                      height: 44px;
+                      border-radius: 12px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fa fa-chart-line"></i>
+                  </div>
+                  <div>
+                    <h4 id="avg" style="margin: 0">82%</h4>
+                    <small>Average Score</small>
+                  </div>
+                </div>
+
+                <span
+                  style="
+                    display: inline-block;
+                    margin-top: 14px;
+                    background: #dbeafe;
+                    color: #1d4ed8;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    font-size: 12px;
+                  "
+                >
+                  Across all assessments
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subject-wise Progress -->
+    <div class="container my-4">
+      <div class="page-title fw-semibold mb-3">📖 Subject-wise Progress</div>
+
+      <div class="row g-4">
+        <!-- Mathematics -->
+        <div
+          class="col-lg-4 col-md-6"
+          data-subject="Mathematics"
+          data-total="42"
+          data-completed="36"
+        >
+          <div class="progress-card subject-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="subject-name fw-semibold">Mathematics</div>
+                <small class="text-muted">36 of 42 topics</small>
+              </div>
+              <span class="badge-excellent">Excellent</span>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between align-items-center">
+              <small class="small-text">Progress</small>
+              <strong class="subject-percent">0%</strong>
+            </div>
+
+            <div class="progress mt-1">
+              <div class="progress-bar subject-progress-bar"></div>
+            </div>
+
+            <!-- Completed / Pending -->
+            <div class="d-flex justify-content-between mt-3 small-text">
+              <div class="completed-text"></div>
+              <div class="pending-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Physics -->
+        <div
+          class="col-lg-4 col-md-6"
+          data-subject="Physics"
+          data-total="38"
+          data-completed="27"
+        >
+          <div class="progress-card subject-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="subject-name fw-semibold">Physics</div>
+                <small class="text-muted">27 of 38 topics</small>
+              </div>
+              <span class="badge-good">Good</span>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between">
+              <small class="small-text">Progress</small>
+              <strong class="subject-percent">0%</strong>
+            </div>
+
+            <div class="progress mt-1">
+              <div class="progress-bar subject-progress-bar"></div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3 small-text">
+              <div class="completed-text"></div>
+              <div class="pending-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chemistry -->
+        <div
+          class="col-lg-4 col-md-6"
+          data-subject="Chemistry"
+          data-total="35"
+          data-completed="24"
+        >
+          <div class="progress-card subject-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="subject-name fw-semibold">Chemistry</div>
+                <small class="text-muted">24 of 35 topics</small>
+              </div>
+              <span class="badge-good">Good</span>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between">
+              <small class="small-text">Progress</small>
+              <strong class="subject-percent">0%</strong>
+            </div>
+
+            <div class="progress mt-1">
+              <div class="progress-bar subject-progress-bar"></div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3 small-text">
+              <div class="completed-text"></div>
+              <div class="pending-text"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biology -->
+        <div
+          class="col-lg-4 col-md-6"
+          data-subject="Biology"
+          data-total="40"
+          data-completed="22"
+        >
+          <div class="progress-card subject-card">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="subject-name fw-semibold">Biology</div>
+                <small class="text-muted">22 of 40 topics</small>
+              </div>
+              <span class="badge-poor">Needs Improvement</span>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between">
+              <small class="small-text">Progress</small>
+              <strong class="subject-percent">0%</strong>
+            </div>
+
+            <div class="progress mt-1">
+              <div class="progress-bar subject-progress-bar"></div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3 small-text">
+              <div class="completed-text"></div>
+              <div class="pending-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-4">
+      <!-- ===== This Week's Focus ===== -->
+      <div class="focus-section d-flex gap-3 align-items-start">
+        <div class="focus-icon">
+          <i class="fa fa-bullseye"></i>
+        </div>
+
+        <div>
+          <div class="focus-title">This Week’s Focus</div>
+
+          <div class="focus-text">
+            Based on your progress, we recommend focusing on
+            <strong>Biology (Photosynthesis)</strong> and
+            <strong>Physics (Wave Motion)</strong> to improve your overall
+            performance.
+          </div>
+
+          <div class="focus-tags">
+            <span class="focus-tag">Biology: Chapter 3</span>
+            <span class="focus-tag">Physics: Chapter 7</span>
+            <span class="focus-tag">Chemistry: Periodic Table</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assests/js/student-dashboard.js"></script>
+  </body>
+</html>
